@@ -10,12 +10,6 @@ const state ={
   selectedNote:{}
 };
 
-const mutations={
-  ADD_NOTE(state){
-    console.log(state);
-  }
-}
-
 export default new Vuex.Store({
   state,
   mutations
