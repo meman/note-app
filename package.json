@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot",
-    "build": "webpack -p"
+    "build": "webpack -p",
+    "test": "karma start karma.conf.js"
   },
   "keywords": [],
   "author": "",
@@ -22,7 +23,14 @@
     "vue-loader": "^8.2.3",
     "vue-style-loader": "^1.0.0",
     "webpack": "^1.13.0",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^1.14.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.15",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-spec-reporter": "0.0.23",
+    "karma-webpack": "^1.7.0",
+    "phantomjs": "^1.9.19"
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
