@@ -1,5 +1,5 @@
 var webpackConf = require('./webpack.config.js');
-delete webpackConf.entry
+delete webpackConf.entry;
 
 module.exports = function (config) {
   config.set({
@@ -17,5 +17,5 @@ module.exports = function (config) {
       noInfo: true
     },
     autoWatch: true
-  })
-}
+  });
+};

@@ -1,0 +1,107 @@
+#app,html{
+  height: 100%;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  height: 100%;
+  max-height: 100%;
+  position: relative;
+}
+
+.toolbar{
+  float: left;
+  height: 100%;
+  background-color: #4A4D5A;
+  width: 5em;
+}
+
+.toolbar i{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 0.7em;
+  font-size: x-large;
+  margin-top: 0.5em;
+  color: grey;
+  transition: color 1s;
+  cursor: pointer;
+}
+
+.toolbar i:hover{
+  color: white;
+}
+
+.toolbar i.glyphicon-star{
+  color: gold;
+}
+
+.note-list{
+  float: left;
+  height: 100%;
+  width: 22em;
+  background: #EAEAEA;
+}
+
+.note-list .list-header{
+  padding: 10px;
+  text-align: center;
+}
+
+.note-list .list-header h2{
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.note-list .list-body{
+  height: calc(100% - 110px);
+  max-height: calc(100% - 110px);
+  overflow: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.note-list .list-body li{
+  padding: 10px;
+  background-color: white;
+  font-size: large;
+  border-bottom: solid 1px #EAEAEA;
+  cursor: pointer;
+}
+.note-list .list-body li:last-of-type{
+  border-bottom: none;
+}
+
+
+/*
+
+.note-list .list-header{
+  padding: 10px;
+  text-align: center;
+}
+
+.note-list .list-header h2{
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+.note-list .list-body{
+  height: calc(100% - 137px);
+  max-height: calc(100% - 137px);
+  overflow: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.note-list .list-body li{
+  padding: 10px;
+  background-color: white;
+  font-size: large;
+  border-bottom: solid 1px #EAEAEA;
+  cursor: pointer;
+}
+.note-list .list-body li:last-of-type{
+  border-bottom: none;
+}*/

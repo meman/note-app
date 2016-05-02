@@ -19,6 +19,20 @@ const Mutations = {
   SET_ACTIVE_NOTE(state,note){
     state.selectedNote = _.isUndefined(note) ? {} : note;
   },
-}
+  EDIT_NOTE(state,text){
+    if(!_.isUndefined(state.selectedNote)){
+      state.selectedNote.text = text;
+    }else{
+      state.selectedNote = {};
+    }
+  },
+  DELETE_NOTE (state) {
+
+    state.notes.$remove(state.selectedNote);
+    state.selectedNote = {};
+    console.log(state.notes);
+    // state.activeNote = state.notes[0];
+  },
+};
 
 export default Mutations;

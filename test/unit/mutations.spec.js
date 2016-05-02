@@ -1,6 +1,6 @@
 import mutations from '../../vuex/mutations';
 
-const { ADD_NOTE,TOGGLE_FAVORITE,SET_ACTIVE_NOTE} = mutations ;
+const { ADD_NOTE,TOGGLE_FAVORITE,SET_ACTIVE_NOTE,EDIT_NOTE} = mutations ;
 
 describe('mutations.add_note', () => {
   var state;
@@ -77,7 +77,7 @@ describe('mutations.set_active_note', () => {
   var note = {
     title:'New Title',
     favorite:false
-  }
+  };
 
   beforeEach(()=>{
     state ={
@@ -95,5 +95,54 @@ describe('mutations.set_active_note', () => {
     SET_ACTIVE_NOTE(state,undefined);
     expect(state.selectedNote).toEqual({});
   });
-  
+
+});
+
+describe('mutations.edit_note', () => {
+  var state;
+
+  beforeEach(()=>{
+    state ={
+      notes:[],
+      selectedNote:{
+        title:'New Title',
+        favorite:false
+      }
+    };
+  });
+
+  it('should set the selected text value to inputed value',()=>{
+    EDIT_NOTE(state,'sample text');
+    expect(state.selectedNote.text).toEqual('sample text');
+  });
+
+  it('should set the selected note value to empty object if the value is undefined',()=>{
+    state.selectedNote = undefined;
+    EDIT_NOTE(state,'sample text');
+    expect(state.selectedNote).toEqual({});
+  });
+});
+
+describe('mutations.delete_note', () => {
+  var state;
+  beforeEach(()=>{
+    state ={
+      notes:[
+        {
+          title:'New Title',
+          favorite:false
+        }
+      ],
+      selectedNote:{
+        title:'New Title',
+        favorite:false
+      }
+    };
+  });
+
+  it('should given the selectedNote it should remove it from the notes list',()=>{
+    // EDIT_NOTE(state,'sample text');
+    // expect(state.selectedNote.text).toEqual('sample text');
+  });
+
 });
