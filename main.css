@@ -1,6 +1,12 @@
 #app,html{
   height: 100%;
 }
+#app{
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
 
 body{
   margin: 0;
@@ -12,7 +18,6 @@ body{
 }
 
 .toolbar{
-  float: left;
   height: 100%;
   background-color: #4A4D5A;
   width: 5em;
@@ -26,7 +31,6 @@ body{
   font-size: x-large;
   margin-top: 0.5em;
   color: grey;
-  transition: color 1s;
   cursor: pointer;
 }
 
@@ -34,12 +38,11 @@ body{
   color: white;
 }
 
-.toolbar i.glyphicon-star{
+i.glyphicon-star{
   color: gold;
 }
 
 .note-list{
-  float: left;
   height: 100%;
   width: 22em;
   background: #EAEAEA;
@@ -63,45 +66,84 @@ body{
   padding: 0;
 }
 
-.note-list .list-body li{
+.note-list .list-body li.note-item{
   padding: 10px;
   background-color: white;
   font-size: large;
   border-bottom: solid 1px #EAEAEA;
   cursor: pointer;
 }
-.note-list .list-body li:last-of-type{
+.note-list .list-body li.note-item:last-of-type{
   border-bottom: none;
 }
 
+.note-list .list-body li.note-item.active{
+  background-color: #4E4EC5;
+  color: white;
+}
 
-/*
+li.note-item .title{
+  width: 80%;
+  display: inline-block;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow-y: auto;
+}
 
-.note-list .list-header{
+li.note-item i.glyphicon-star{
+  font-size: larger;
+  margin: 5px;
+}
+
+.editor{
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   padding: 10px;
-  text-align: center;
+  display: flex;
+  flex-flow: column;
 }
 
-.note-list .list-header h2{
-  margin-top: 0;
-  text-transform: uppercase;
-}
-
-.note-list .list-body{
-  height: calc(100% - 137px);
-  max-height: calc(100% - 137px);
-  overflow: auto;
+.editor-header{
+  border: none;
+  font-size: x-large;
   width: 100%;
-  padding: 0;
+  outline: none;
+  border-bottom: solid transparent;
+}
+.editor-header:focus,.editor-body:focus
+{
+  border-color: black;
 }
 
-.note-list .list-body li{
+.editor-body{
+  width: 100%;
+  flex-grow: 1;
+  margin-top: 10px;
   padding: 10px;
-  background-color: white;
-  font-size: large;
-  border-bottom: solid 1px #EAEAEA;
-  cursor: pointer;
+  border:none;
+  resize: none;
+  outline: none;
+  border-bottom: solid transparent;
 }
-.note-list .list-body li:last-of-type{
-  border-bottom: none;
+
+/*.editor-header input{
+  border: none;
+  font-size: x-large;
+  width: 100%;
+  outline: none;
+}
+
+.editor-header input:focus
+{
+  border-bottom: solid;
+}
+
+.editor-body textarea{
+  width: 100%;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px;
+  border-color: #B3B3B3;
 }*/
